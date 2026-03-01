@@ -55,24 +55,9 @@ The current version (v3.0) serves as our completed Proof of Concept (PoC) for th
 ---
 
 ## 💻 Installation & Setup (For Judges)
+
 Clone the repository and install dependencies:
-\`\`\`bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/OrcaStrike-AI-Agent.git
+```bash
+git clone [https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git)
 cd OrcaStrike-AI-Agent
 npm install
-\`\`\`
-
-Create a `.env` file in the root directory:
-\`\`\`env
-SEED_PHRASE="your_12_word_seed_phrase_here"
-OPENAI_API_KEY="your_openrouter_api_key_here"
-\`\`\`
-
-Run the Agent Terminal:
-\`\`\`bash
-node agent.js
-# Or run start.cmd on Windows for the stylized UI
-\`\`\`
-
-## 🏆 Hackathon Target
-Built for the **Tether WDK Hackathon on DoraHacks**, specifically targeting the **Agent Wallets (WDK / OpenClaw Integration)** track. OrcaStrike proves that WDK is the perfect financial engine for autonomous AI actors.
