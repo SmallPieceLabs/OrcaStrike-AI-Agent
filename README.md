@@ -1,63 +1,66 @@
-# 🎯 OrcaStrike AI: Autonomous WDK-Powered Arbitrage Agent
+# 🎯 SmallPieceLabs: OrcaStrike AI Agent v3.0
+### Autonomous WDK-Powered Arbitrage Engine
 
-![Version](https://img.shields.io/badge/version-3.0_PoC-blue)
+![Version](https://img.shields.io/badge/version-3.0_Production-blue)
 ![Track](https://img.shields.io/badge/Hackathon_Track-Agent_Wallets_(WDK)-success)
-![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen)
+![Status](https://img.shields.io/badge/Status-Fully_Operational-brightgreen)
 
 ## 💡 Overview
-OrcaStrike AI is an autonomous, high-frequency Trading Agent designed to hunt for low-risk stablecoin arbitrage opportunities across omni-chain liquidity pools. 
+**OrcaStrike AI** is an autonomous, high-frequency Trading Agent developed by **SmallPieceLabs**. It is specifically designed to hunt for low-risk stablecoin arbitrage opportunities across omni-chain liquidity pools.
 
-By integrating **Tether's Wallet Development Kit (WDK)** for secure, non-custodial asset management and **OpenRouter AI (LLMs)** for real-time economic reasoning, OrcaStrike represents the next generation of Web3 Autonomous Agents. It bridges the gap between AI's analytical power and decentralized finance's execution layer.
+By integrating **Tether's Wallet Development Kit (WDK)** for secure, non-custodial asset management and **OpenRouter AI (Gemini Flash-001)** for real-time economic reasoning, OrcaStrike represents the next generation of Web3 Autonomous Agents. It bridges the gap between AI's analytical power and decentralized finance's execution layer.
 
 ## 🚀 Key Features
-* **WDK Core Integration:** Fully utilizes `@tetherto/wdk` and `@tetherto/wdk-wallet-evm` to generate non-custodial wallets, sign transactions, and manage capital securely without third-party custodians.
-* **AI-Driven Risk Assessment:** Instead of hardcoded `if/else` logic, the agent sends live spread data to LLMs via OpenRouter to analyze slippage, gas fees, and profitability before making an `EXECUTE` or `IGNORE` decision.
-* **Omni-Stable Scanner:** Continuously monitors multi-DEX liquidity pools for stablecoin pairs (USDT/USDC, USDT/DAI, USDT/PYUSD) to capture micro-arbitrage opportunities.
-* **Automated Capital Compounding:** Reinvests profits autonomously into the WDK-managed capital pool.
+* **WDK Core Integration:** Fully utilizes `@tetherto/wdk` and `@tetherto/wdk-wallet-evm` to generate non-custodial wallets, sign transactions, and manage capital securely without third-party custodians on Sepolia Testnet.
+* **AI-Driven Risk Assessment:** Instead of hardcoded logic, the agent sends live matrix data to LLMs via OpenRouter (Gemini Flash) to analyze slippage, gas fees, and profitability before making an `EXECUTE` or `IGNORE` decision.
+* **18-Node Omni-Scanner:** Continuously monitors a matrix of **6 major exchanges** (Binance, Bybit, OKX, Uniswap, Curve, Pancake) and **3 stablecoin pairs** (USDT/USDC, USDT/DAI, USDT/PYUSD) to capture micro-arbitrage opportunities.
+* **Automated Capital Compounding:** Reinvests profits autonomously into the WDK-managed capital pool, with real-time visual tracking in the terminal.
+* **Professional Terminal UI:** Features a branded SmallPieceLabs dashboard with high-density data feeds and real-time gas reserve monitoring.
 
 ## 🛠️ How It Works (The Workflow)
-1. **SCAN:** The agent monitors 20+ simulated DEXs/CEXs every 5 seconds for USDT discrepancies.
-2. **REASON:** Identifies the maximum spread and prompts the AI Engine (Gemini/Llama via OpenRouter) with potential profit and estimated gas costs.
-3. **EXECUTE:** If the AI determines the trade is economically rational (Net Profit > Safe Threshold), it triggers the WDK to sign and broadcast the flash-swap transaction.
+1. **SCAN:** The agent monitors **18 liquidity nodes** every 5 seconds for price discrepancies.
+2. **REASON:** Identifies the maximum spread and prompts the SmallPieceLabs AI Engine with potential profit and estimated gas costs.
+3. **EXECUTE:** If the AI determines the trade is economically rational (Net Profit > Threshold), it triggers the WDK to sign and broadcast the transaction.
 
 ## 🧰 Tech Stack
 * **Wallet Management:** Tether WDK (`@tetherto/wdk`), `@tetherto/wdk-wallet-evm`
-* **AI Engine:** OpenRouter API (Gemini / Llama)
+* **AI Engine:** OpenRouter API (Gemini-Flash-001)
 * **Environment:** Node.js, JavaScript, dotenv
 * **Network:** Ethereum Sepolia Testnet (RPC Integration)
 
 ---
 
 ## 📈 The Evolution (DoraHacks Hackathon Journey)
-To build a robust AI Agent within the hackathon timeframe, OrcaStrike was developed and completed in three major iterations explicitly for this DoraHacks event:
+To build a robust AI Agent within the hackathon timeframe, OrcaStrike was developed and completed in three major iterations by **SmallPieceLabs**:
 
-* **v1.0 (The Foundation):** Successfully integrated `WDK Core` to generate wallets, fetch balances on Sepolia, and prepare the execution layer.
-* **v2.0 (The Brain):** Replaced hardcoded trading logic with an LLM Engine (via OpenRouter), enabling the bot to read `gas fees` vs `profit` and autonomously output `EXECUTE` or `IGNORE`.
-* **v3.0 (The Omni-Scanner - Current Demo):** Built a high-frequency Terminal UI that simulates scanning 20+ liquidity pools for stablecoin spreads, managing a $1,000 capital pool with compounded returns.
+* **v1.0 (The Foundation):** Successfully integrated `WDK Core` to generate wallets and fetch balances on Sepolia.
+* **v2.0 (The Brain):** Replaced hardcoded trading logic with an LLM Engine (via OpenRouter), enabling autonomous `EXECUTE` decisions.
+* **v3.0 (The Omni-Scanner):** Finalized the production-ready Terminal UI with an 18-node matrix scanner and real-time WDK balance syncing.
 
 ---
 
 ## 🗺️ Roadmap: Post-Hackathon Research & Development
-The current version (v3.0) serves as our completed Proof of Concept (PoC) for the Tether WDK Hackathon. Following the conclusion of this event, we plan to research and develop the following phases to transition OrcaStrike into a production-ready Mainnet protocol:
+The current v3.0 serves as our completed Proof of Concept (PoC). Following the event, we plan to transition into a production-ready protocol:
 
 ### 🔹 Phase 1: Live Market Integration (v4.0)
-* **Real-time Oracles:** Replace simulated prices with live data feeds from Binance API and decentralized Oracles (Chainlink).
-* **Mempool Scanning:** Implement WebSockets to read pending transactions in the Ethereum Mempool to detect arbitrage opportunities before they are minted.
-* **Smart Contract Deployment:** Deploy a custom Solidity Smart Contract to handle atomic swaps (ensuring trades only execute if profitable, reverting otherwise).
+* **Real-time Oracles:** Replace simulated prices with live data feeds from Binance API and Chainlink.
+* **Mempool Scanning:** Implement WebSockets to detect arbitrage opportunities before they are minted.
+* **Smart Contract Deployment:** Custom Solidity contracts to handle atomic swaps.
 
 ### 🔹 Phase 2: Flash Loans & MEV (v5.0)
-* **Zero-Capital Arbitrage:** Integrate with Aave or Uniswap V3 Flash Loans to borrow capital instantly, execute arbitrage, repay the loan, and keep the profit using the WDK wallet.
-* **MEV Protection:** Implement Flashbots RPC to prevent our transactions from being front-run in the dark forest of Ethereum.
+* **Zero-Capital Arbitrage:** Integrate with Aave/Uniswap Flash Loans to borrow capital instantly using the WDK wallet.
+* **MEV Protection:** Implement Flashbots RPC to prevent front-running.
 
 ### 🔹 Phase 3: Cross-Chain Expansion (v6.0)
-* **Layer 2 Networks:** Expand WDK scanning capabilities to low-fee networks like Arbitrum, Optimism, and Base for high-frequency trading.
+* **L2 Expansion:** Expand WDK capabilities to Arbitrum, Optimism, and Base for lower fees.
 
 ---
 
-## 💻 Installation & Setup (For Judges)
+## 💻 Installation & Setup
 
-Clone the repository and install dependencies:
-```bash
-git clone [https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git)
-cd OrcaStrike-AI-Agent
-npm install
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git)
+   cd OrcaStrike-AI-Agent
+
+
