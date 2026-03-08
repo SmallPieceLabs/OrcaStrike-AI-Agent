@@ -1,28 +1,26 @@
 @echo off
-:: Set the Terminal Title to match your brand
-title SmallPieceLabs - OrcaStrike AI v3.0 Terminal
-:: Optimized window size: 110 columns x 35 lines to fit the 18-node matrix
-mode con: cols=110 lines=35
-:: Professional Theme: 0b (Aqua on Black) for a high-tech trading look
+title OrcaStrike v5.0 Controller
 color 0b
 
-echo =======================================================
-echo    [///] SMALLPIECELABS - AGENT BOOT SEQUENCE
-echo    Initializing OrcaStrike AI Production Engine v3.0...
-echo =======================================================
-echo.
+:: ============================================================================
+:: ORCASTRIKE v5.0 - DUAL-TERMINAL LAUNCHER
+:: This script initializes the OmniScanner (Data) and AI Strategist (Logic).
+:: Ensure 'npm install' is run and '.env' is configured before executing.
+:: ============================================================================
 
-:: Automatic environment check
-if not exist node_modules (
-    echo [SYSTEM] Local dependencies missing. Running 'npm install'...
-    npm install
-)
+echo [SYSTEM] Launching OrcaStrike v5.0 Dual-Terminal Architecture...
 
-:: Execute the Production Agent
-node agent.js
+:: 1. Launch The Eye (18-Node Scanner)
+echo [SYSTEM] Booting OmniScanner...
+start "OrcaStrike - OmniScanner (The Eye)" node orchestrator.js
 
-echo.
-echo =======================================================
-echo    [!] AGENT PROCESS TERMINATED BY SYSTEM
-echo =======================================================
-pause
+:: Wait for 2 seconds to allow the scanner to bind (hiding the countdown text)
+timeout /t 2 /nobreak >nul
+
+:: 2. Launch The Brain (AI General)
+echo [SYSTEM] Booting AI Strategist...
+start "OrcaStrike - AI Strategist (The Brain)" node strategist.js
+
+echo [SYSTEM] All modules online. Closing launcher...
+timeout /t 2 >nul
+exit
