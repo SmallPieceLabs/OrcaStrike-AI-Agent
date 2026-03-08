@@ -1,5 +1,5 @@
-# 🎯 SmallPieceLabs: OrcaStrike AI Agent v3.0
-### Autonomous WDK-Powered Arbitrage Engine
+# 🎯 SmallPieceLabs: OrcaStrike AI Agent v5.0
+### Dual-Terminal Autonomous HFT & Arbitrage Architecture
 
 ![Version](https://img.shields.io/badge/version-3.0_Production-blue)
 ![Track](https://img.shields.io/badge/Hackathon_Track-Agent_Wallets_(WDK)-success)
@@ -30,37 +30,90 @@ By integrating **Tether's Wallet Development Kit (WDK)** for secure, non-custodi
 
 ---
 
-## 📈 The Evolution (DoraHacks Hackathon Journey)
-To build a robust AI Agent within the hackathon timeframe, OrcaStrike was developed and completed in three major iterations by **SmallPieceLabs**:
+## 📈 The Evolution: Architectural Journey to v5.0
+Building an enterprise-grade Autonomous Trading Agent within a constrained hackathon timeline required rigorous iterations. The OrcaStrike architecture evolved through five major phases, each meticulously engineered to resolve critical bottlenecks in latency, execution logic, and system scalability.
 
-* **v1.0 (The Foundation):** Successfully integrated `WDK Core` to generate wallets and fetch balances on Sepolia.
-* **v2.0 (The Brain):** Replaced hardcoded trading logic with an LLM Engine (via OpenRouter), enabling autonomous `EXECUTE` decisions.
-* **v3.0 (The Omni-Scanner):** Finalized the production-ready Terminal UI with an 18-node matrix scanner and real-time WDK balance syncing.
+### 🔹 v1.0: The Foundation (WDK Core Integration)
+**Init `agent.js` v1.0 (WDK Foundation):**
+* Successfully integrated the Tether Wallet Development Kit (WDK) to initialize a secure, non-custodial wallet environment.
+* Established the baseline architectural connection to the Sepolia Testnet, enabling the agent to autonomously fetch and verify on-chain balances without relying on any centralized custody or third-party intermediaries.
+
+### 🔹 v2.0: The Brain (AI Reasoning Engine Integration)
+**Feature Update: Integrate AI reasoning engine & WDK execution (v2.0):**
+* Seamlessly integrated the OpenRouter API (utilizing the Gemini Flash model) to serve as the core intelligence for autonomous, data-driven trade decision-making.
+* Engineered and implemented rigorous profit-versus-gas ratio logic to mathematically validate arbitrage opportunities before any execution is triggered.
+* Significantly enhanced the terminal User Interface (UI) by introducing professional, enterprise-grade English logging and comprehensive system status tracking.
+* Resolved critical core infrastructure bugs, specifically fixing Node.js exit assertion errors to guarantee uninterrupted stability and continuous uptime on Windows deployment environments.
+
+### 🔹 v3.0: The Prototype (Production Release)
+**Release: SmallPieceLabs OrcaStrike AI v3.0 (Production):**
+* Officially launched the v3.0 production milestone featuring an expansive 18-node multi-exchange scanning matrix (monitoring 6 major exchanges across 3 core stablecoin pairs).
+* Achieved full, end-to-end integration with the proprietary SmallPieceLabs Tactical Execution Engine.
+* Enabled real-time, high-fidelity on-chain balance synchronization and autonomous cryptographic transaction signing powered directly by Tether WDK.
+* Vastly enhanced the AI reasoning capabilities via Gemini Flash, allowing the agent to perform highly complex, autonomous arbitrage decision-making under volatile market conditions.
+* Delivered a fully polished, professional, and production-ready terminal UI complete with standardized, English-only operational logging for international deployability.
+
+### 🔹 v4.0: Live Edition (18-Node Matrix & WDK Core)
+🚀 **Finalize monolithic architecture for Hackathon demo:**
+* Integrate Tether WDK Core for dynamic ETH gas deduction & non-custodial EVM settlement.
+* Expand Omni-Scanner to full 18-Node Matrix (6 Exchanges x 3 Stablecoin pairs).
+* Implement Gemini AI JSON reasoning for real-time spread vs gas evaluation.
+* Overhaul terminal UI for enterprise-grade HFT observability (100% English).
+
+### 🔹 v4.1.0: Live RPC Integration & Multi-Node Oracle
+**Release Updates:**
+* Upgraded Orchestration Engine to v4.1.0 (Live Production).
+* Integrated real-time on-chain balance fetching for ETH (Gas) and USDT (Capital).
+* Implemented live network Gas Price estimation via RPC provider.
+* Expanded scanning matrix to 18 nodes (6 exchanges x 3 stablecoin pairs).
+* Stabilized Gemini-2.0-Flash reasoning via OpenRouter.
+* Full localization of terminal logs to English for international standards.
+
+### 🔹 v5.0: Dual-Terminal Distributed Architecture (The Paradigm Shift)
+* **The Critical Bottleneck:** As the 18-Node Matrix scaled, we hit the fundamental limits of Node.js's single-threaded Event Loop. The monolithic architecture could not simultaneously perform high-frequency REST API polling while waiting for heavy, asynchronous LLM API reasoning requests. The AI network latency was actively blocking the data aggregation loop, creating dangerous micro-second blind spots in market monitoring. Furthermore, early alpha bugs in the WDK module caused sporadic silent crashes.
+* **The Solution:** We ruthlessly decoupled the architecture into two isolated, concurrently running micro-processes:
+  1. **`orchestrator.js` (The Eye):** A dedicated, ultra-low-latency data aggregation engine. It asynchronously polls Binance REST APIs and RPC providers, rendering the 18-Node Matrix with absolute cursor positioning (`\x1b[2J\x1b[H`) for a cinematic, artifact-free dashboard—completely unblocked by AI processing times.
+  2. **`strategist.js` (The Brain):** A pure AI execution module. It securely derives identity via core `ethers.js` (bypassing WDK alpha instability while maintaining cryptographic standards), syncs live balances, and maintains a continuous asynchronous dialogue with the LLM to output deterministic JSON execution commands.
+* **The Result:** Zero data-blocking, maximized CPU thread utilization, bypass of all module-level memory leaks, and a robust distributed agent ecosystem capable of parallel processing.
 
 ---
 
-## 🗺️ Roadmap: Post-Hackathon Research & Development
-The current v3.0 serves as our completed Proof of Concept (PoC). Following the event, we plan to transition into a production-ready protocol:
+## 🗺️ Roadmap: Post-Hackathon Research & Development (Towards v10.0)
+The current v5.0 architecture serves as a highly optimized, functional Proof of Concept (PoC). Following the DoraHacks event, SmallPieceLabs is committed to transitioning OrcaStrike from an experimental agent into a fully autonomous, institutional-grade DeFi execution network.
 
-### 🔹 Phase 1: Live Market Integration (v4.0)
-* **Real-time Oracles:** Replace simulated prices with live data feeds from Binance API and Chainlink.
-* **Mempool Scanning:** Implement WebSockets to detect arbitrage opportunities before they are minted.
-* **Smart Contract Deployment:** Custom Solidity contracts to handle atomic swaps.
+### 🚀 Phase 1: Mempool Supremacy & Dark Routing (v6.0)
+Currently, the agent reacts to post-block data. To achieve true High-Frequency Trading (HFT) dominance, the AI must preempt the market state.
+* **WebSocket Mempool Sniping:** We will replace standard REST/HTTP polling with direct WebSocket (WSS) connections to Ethereum/BSC validator nodes. This allows the agent to scan unconfirmed transactions in the mempool, identifying massive swaps (whale movements) that will create arbitrage spreads *milliseconds before* they are officially minted into a block.
+* **MEV-Shielded Execution & Toxic Flow Avoidance:** Public mempools are infested with predatory MEV bots conducting sandwich attacks. We will integrate **Flashbots RPC** and private transaction routing. The agent's signed payloads will be sent directly to block builders, guaranteeing zero slippage, bypassing public mempools entirely, and rendering the agent immune to front-running.
+* **Atomic Smart Contract Vaults:** Deployment of custom Solidity contracts. Instead of basic EOA transfers, the AI will trigger a smart contract that batches multi-hop swaps (e.g., USDT -> USDC -> DAI -> USDT) in a single, atomic transaction. If the precise mathematically calculated profit margin is not met at the exact millisecond of execution, the entire transaction reverts automatically, costing only a minimal gas base fee.
 
-### 🔹 Phase 2: Flash Loans & MEV (v5.0)
-* **Zero-Capital Arbitrage:** Integrate with Aave/Uniswap Flash Loans to borrow capital instantly using the WDK wallet.
-* **MEV Protection:** Implement Flashbots RPC to prevent front-running.
+### 🚀 Phase 2: Zero-Collateral Capital Efficiency (v7.0)
+The current model requires locked USDT capital. We will revolutionize the agent's capital efficiency to infinite APY models.
+* **Flash Loan Integration (JIT Liquidity):** The AI will be upgraded to autonomously interact with lending protocols like Aave, Balancer, or Uniswap V3 Flash protocols. Upon detecting a profitable spread, the agent will borrow up to $10,000,000 in uncollateralized liquidity, execute the arbitrage, and repay the flash loan within the *exact same block*—keeping the net profit minus the ~0.05% protocol fee, all with zero initial capital risk.
+* **Dynamic EIP-1559 Fee Escalation:** We will train the LLM to understand EIP-1559 priority fees dynamically. If a highly lucrative spread is detected, the agent will autonomously calculate and attach the optimal priority fee (bribing the validators) to ensure block inclusion priority over competing MEV bots, essentially automating a bidding war for block space.
 
-### 🔹 Phase 3: Cross-Chain Expansion (v6.0)
-* **L2 Expansion:** Expand WDK capabilities to Arbitrum, Optimism, and Base for lower fees.
+### 🚀 Phase 3: The Omni-Chain Intent Ecosystem (v8.0)
+Liquidity is highly fragmented across Layer 1s, Layer 2s, and emerging app-chains. OrcaStrike must evolve into an omni-chain apex predator.
+* **Layer 2 Native Deployment:** Expanding the execution environment directly onto high-throughput networks like Arbitrum, Optimism, Base, and Monad. Lower gas fees exponentially increase the frequency of profitable micro-arbitrage opportunities that are currently economically unviable on Ethereum Mainnet.
+* **Autonomous Intent-Based Bridging:** Integrating interoperability protocols like LayerZero or Wormhole. The AI Strategist will evaluate global yield maps. If it detects a sustained higher APY or severe liquidity imbalance on a different network, it will autonomously formulate an "intent" and bridge its stablecoin reserves across chains to maximize capital deployment efficiency without human intervention.
 
+### 🚀 Phase 4: Decentralized Agentic Swarms (v9.0)
+* **Multi-Agent Orchestration:** Evolving from a single Strategist to a complete Swarm Architecture. We will deploy specialized sub-agents running locally:
+  * **Risk Assessment Agent:** Evaluates smart contract vulnerabilities and honeypot risks.
+  * **Gas Prediction Agent:** Uses machine learning models to forecast base fee fluctuations.
+  * **Execution Agent:** Signs and broadcasts the final transaction.
+  These agents will communicate via localized RPCs, voting and reaching consensus before a single dollar is moved.
+
+### 🚀 Phase 5: Institutional zk-AI Integration (v10.0)
+* **Zero-Knowledge Proofs for AI (zkML):** To onboard institutional capital, trust must be mathematically guaranteed. We will implement zkML (Zero-Knowledge Machine Learning) so the agent can generate cryptographic proofs of its AI reasoning. Institutions can verify on-chain that the trade was executed exactly according to the AI's risk parameters without exposing the proprietary weights or prompts of the OrcaStrike model.
 ---
 
-## 💻 Installation & Setup
+## 💻 Installation & Setup (v5.0 Dual-Terminal)
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git)
-   cd OrcaStrike-AI-Agent
+To run the OrcaStrike v5.0 architecture locally, follow these steps to initialize both the Omni-Scanner and the AI Strategist.
 
-
+### 1. Clone the repository & Install Dependencies
+```bash
+git clone [https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent.git)
+cd OrcaStrike-AI-Agent
+npm install
