@@ -9,7 +9,7 @@
 ## 📽️ Quick Links & Documentation
 
 * **📄 Technical Pitch (PDF):** [OrcaStrike AI v5.0 Whitepaper](https://github.com/SmallPieceLabs/OrcaStrike-AI-Agent/blob/main/docs/OrcaStrike-AI-v5.0-The-Distributed-Apex-Predator-of-DeFi-Arbitrage.pdf)
-* **🎬 Live Demo (YouTube):** [Watch OrcaStrike in Action](https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3DWWOe0ohZCA8)
+* **🎬 Live Demo (YouTube):** [Watch OrcaStrike in Action](https://www.youtube.com/watch?v=WWOe0ohZCA8)
 
 ## 💡 Overview
 
